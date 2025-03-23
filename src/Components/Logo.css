@@ -1,0 +1,14 @@
+:root {
+  --svg-fill: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --svg-fill: white;
+  }
+}
+svg {
+  padding: 5px 0px;
+  margin: 5px 0px;
+  margin-left: 10px;
+}
