@@ -95,6 +95,7 @@ nav {
     box-shadow: 2px 0px 2px hsl(0, 0%, 20%) inset;
     right: 0;
     top: 85.2px;
+    z-index: 10;
     background-color: #0b090a;
   }
 }

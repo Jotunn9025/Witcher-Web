@@ -1,0 +1,100 @@
+.Home {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  justify-content: space-around;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+
+.Home.centered {
+  justify-content: center;
+}
+.carosel {
+  transition: width 0.5s ease;
+}
+
+.carosel.expanded {
+  width: 90%;
+  transition: width 0.5s ease;
+}
+
+.carosel.reduced {
+  width: 65%;
+  transition: width 0.5s ease;
+}
+
+.description-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 360px;
+  padding: 30px 10px;
+  background-color: hsl(206, 14%, 5%);
+  border-radius: 15px;
+  color: hsl(206, 14%, 5%);
+  box-shadow: 2px 2px 10px hsla(0, 0%, 80%, 0.1);
+  transition: transform 0.5s ease;
+  transform: translateX(200%);
+  z-index: 10;
+  text-align: left;
+  color: #b1a7a6;
+}
+
+.description-container.visible {
+  position: relative;
+  transform: none;
+  color: #b1a7a6;
+}
+.close-btn {
+  position: absolute;
+  right: 17.5px;
+  top: 15px;
+}
+.description-container h2,
+.description-container p {
+  color: #bdb3b3;
+}
+@media (max-width: 800px) {
+  .Home {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  .carosel.expanded {
+    width: 90%;
+    transition: width 0.5s ease 0.5s;
+  }
+  .carosel.reduced {
+    width: 90%;
+    transition: width 0.5s ease;
+  }
+  .description-container {
+    position: relative;
+    width: 90%;
+    transform: none;
+    color: #b1a7a6;
+  }
+  .close-btn {
+    position: absolute;
+    right: 50px;
+    top: 15px;
+  }
+}
+@media (prefers-color-scheme: light) {
+  .description-container {
+    background-color: #b1a7a6;
+    color: #161a1d;
+    box-shadow: 3px 3px 3px hsla(0, 0%, 25%, 0.2);
+  }
+  .description-container h2,
+  .description-container p {
+    color: #161a1d;
+  }
+}
