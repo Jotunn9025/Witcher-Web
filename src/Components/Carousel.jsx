@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Card from "./Card";
 import images from "../importImages";
 import "./Carousel.css";
-import responsiveness from "../assets/responsiveness";
 function Carousel({ selectedIndex, setSelectedIndex, characters }) {
   useEffect(() => {
     const arrows = document.querySelectorAll(".slick-arrow");
@@ -41,8 +40,33 @@ function Carousel({ selectedIndex, setSelectedIndex, characters }) {
     pauseOnHover: false,
     swipeToSlide: true,
     focusOnSelect: true,
-    variableWidth: true,
-    responsive: responsiveness,
+    variableWidth: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: !selectedIndex ? 3 : 2,
+          centerMode: true,
+          variableWidth: false,
+        },
+      },
+      {
+        breakpoint: 760,
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,
+          variableWidth: false,
+        },
+      },
+      {
+        breakpoint: 550,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          variableWidth: false,
+        },
+      },
+    ],
   };
   useEffect(() => {
     if (sliderRef.current) {
